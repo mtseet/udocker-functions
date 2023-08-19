@@ -20,7 +20,7 @@ This project (udocker-functions) provides the above features using the linux scr
 - udocker_enter - enter into the console of a running container 
 
 ## Dependencies
-bash, screen and python3
+udocker, bash, screen and python3
 
 ## Installation 
 
@@ -32,7 +32,11 @@ mkdir -p ~/.udocker/scripts
 cp udocker-bashrc.sh ~/.udocker/scripts
 cp udocker-run.py ~/.udocker/scripts
 
+#install screen
 sudo apt install screen
+
+#install udocker
+pip install udocker
 
 #Add the following to .bashrc
 source ~/.udocker/scripts/udocker-bash.sh
