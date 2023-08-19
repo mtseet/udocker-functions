@@ -106,4 +106,4 @@ Some containers with interactive shell, like alpine, may not terminate when issu
 ## Disclamer
 Since this project relies on bash scripts, we cannot guarantee the functions will always work. If the output formatting of the udocker program changes then it may break.
 
-We have tested the funtions with udocker version: 1.3.10 on ubuntu 22.04 and termux.
+We have tested the functions with udocker version: 1.3.10 on ubuntu 22.04 and termux.
