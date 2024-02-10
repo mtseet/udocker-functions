@@ -2,7 +2,7 @@ TMPDIR="$HOME/.udocker/logs"
 
 mkdir -p $TMPDIR
 
-UDOCKER_PYTHON_SCRIPT=~/.udocker/scripts/udocker-run.py
+UDOCKER_PYTHON_SCRIPT="python3 $HOME/.udocker/scripts/udocker-run.py"
 
 udocker_prune(){
      udocker rm `udocker ps|cut -d\  -f1`
