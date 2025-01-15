@@ -104,4 +104,5 @@ udocker_stop(){
 
    name=$1
    screen -S $name -X stuff $'\003'
+   screen -S $name -X quit
 }
