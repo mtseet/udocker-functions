@@ -114,6 +114,12 @@ CONTAINER ID  CONTAINER  IMAGE                    COMMAND
 96ddcd9be0e7  alpine     alpine:latest  
 
 ```
+## Config options
+You can manually manage ~/.udocker/runconfig.yaml. It is used to manage launching containers with complex parameters without having to specifiy the parameters everytime a container is launched.
+params1 - are proot options
+params2 - are params that come after the main command that is launched in the container
+Just a note to use proot options with = i.e. -v=/tmp:/tmp. Dont use -v /tmp:/tmp
+
 ## Special notes
 Some containers with interactive shell, like alpine, may not terminate when issuing udocker_stop. In this case you have to enter the container manually using udocker_enter and exit or kill the container with "exit" command or Ctrl+c.
 
@@ -121,3 +127,4 @@ Some containers with interactive shell, like alpine, may not terminate when issu
 Since this project relies on bash scripts, we cannot guarantee the functions will always work. If the output formatting of the udocker program changes then it may break.
 
 We have tested the functions with udocker version: 1.3.10 on ubuntu 22.04 and termux.
+
