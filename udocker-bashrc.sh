@@ -49,7 +49,7 @@ udocker_ps(){
 
    #ps aux | grep "udocker run" | head -n -1 |awk '{printf $2 " "} {for (i=13; i<NF; i++) printf $i " "; print $NF}'
 
-lines=$(ps a -o pid,command | grep "udocker run"| grep python |awk '{for (i=5; i<NF; i++) printf $i " "; printf $NF;print ""}')
+lines=$(ps a -o pid,command | grep "udocker run"| grep python | awk '{for (i=5; i<NF; i++) printf $i " "; printf $NF;print ""}')
 
 echo "CONTAINER ID|CONTAINER|IMAGE|COMMAND" > $TMPDIR/table.txt
 
@@ -76,6 +76,12 @@ do
   img=$(udocker ps | grep "\\['$container"|cut -d ']' -f 2 | sed 's/ //g')
   echo -n "$img|" >> $TMPDIR/table.txt
 
+  if [[ "$1" != "-f" ]]; then  
+    IFS="$OLDIFS"
+    echo "" >> $TMPDIR/table.txt
+    continue
+  fi
+
   IFS="$OLDIFS"
   for v in $line;
   do
@@ -84,6 +90,7 @@ do
      fi
   done
   IFS=$'\n'
+  echo "" >> $TMPDIR/table.txt
   echo "" >> $TMPDIR/table.txt
   
 done

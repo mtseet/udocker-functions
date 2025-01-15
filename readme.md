@@ -56,8 +56,18 @@ localhost:$ udocker_run nginx --reinit --publish=2080:80
 
 localhost:$ udocker_ps
 CONTAINER ID  CONTAINER  IMAGE                    COMMAND
-4fbbce015381  nginx      nginx:1-alpine3.18-slim  --publish=2080:80 
+4fbbce015381  nginx      nginx:1-alpine3.18-slim 
 ```
+
+- udocker_ps full output
+```
+udocker_ps -f
+CONTAINER ID  CONTAINER  IMAGE                    COMMAND
+96ddcd9be0e7  alpine     alpine:latest            
+4fbbce015381  nginx      nginx:1-alpine3.18-slim  --publish=2080:80
+
+```
+
 - udocker_start, udocker_stop
 
 ```
